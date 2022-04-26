@@ -1,8 +1,4 @@
-const root = new Vue({
-  el: "#root",
-  data: {},
-  methods: {},
-});
+// Array users
 
 const user = {
   name: "Nome Utente",
@@ -26,3 +22,21 @@ const contacts = [
     avatar: "_4",
   },
 ];
+
+//Vue
+
+const root = new Vue({
+  el: "#root",
+  data: {
+    user: user,
+    contacts: contacts,
+  },
+  methods: {
+    getAvatarUrl(contact) {},
+  },
+  display() {
+    for (key in this.contacts) {
+      console.log(this.contacts[key]);
+    }
+  },
+});

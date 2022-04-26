@@ -66,3 +66,7 @@ header {
 .rounded-8 {
   border-radius: 0.8rem !important;
 }
+
+.upperfont {
+  color: #b1b1b1;
+}
