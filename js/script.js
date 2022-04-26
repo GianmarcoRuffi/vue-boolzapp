@@ -18,8 +18,28 @@ const contacts = [
     avatar: "_3",
   },
   {
-    name: "Luisa",
+    name: "Alessandro B.",
     avatar: "_4",
+  },
+
+  {
+    name: "Alessandro L.",
+    avatar: "_5",
+  },
+
+  {
+    name: "Claudia",
+    avatar: "_6",
+  },
+
+  {
+    name: "Federico",
+    avatar: "_7",
+  },
+
+  {
+    name: "Davide",
+    avatar: "_8",
   },
 ];
 

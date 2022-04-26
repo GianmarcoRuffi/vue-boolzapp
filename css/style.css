@@ -24,8 +24,8 @@ main {
 }
 
 .avatar {
-  height: 75px;
-  width: 75px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 
@@ -69,4 +69,12 @@ header {
 
 .upperfont {
   color: #b1b1b1;
+}
+
+.bell {
+  border-radius: 50%;
+}
+
+.notify {
+  color: #79a1a1;
 }
