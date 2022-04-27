@@ -191,20 +191,20 @@ const root = new Vue({
 
     sendMessage() {
       const newMessage = {
-        date: "10/01/2022 15:30:55",
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         message: this.message,
         status: "sent",
       };
       const responseMessage = {
-        date: "10/01/2022 15:30:55",
-        message: "ok  ",
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+        message: "Ok!",
         status: "received",
       };
       this.contacts[this.activeContactIndex].messages.push(newMessage);
       this.message = "";
       setTimeout(() => {
         this.contacts[this.activeContactIndex].messages.push(responseMessage);
-      }, 2000);
+      }, 1000);
     },
   },
 });
