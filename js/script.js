@@ -194,7 +194,10 @@ const root = new Vue({
       }
     },
 
-    viewChat(index) {
+    viewChat(id) {
+      const index = this.contacts.findIndex((contact) => {
+        return contact.id === id;
+      });
       this.activeContactIndex = index;
     },
 
@@ -218,15 +221,9 @@ const root = new Vue({
   },
   computed: {
     filteredContacts() {
-      return this.contacts.filter((contact) => {
-        if (
-          contact.name.toLowerCase().includes(this.searchText.toLowerCase())
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+      return this.contacts.filter((contact) =>
+        contact.name.toLowerCase().includes(this.searchText.toLowerCase())
+      );
     },
   },
 });
