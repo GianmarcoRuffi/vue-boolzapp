@@ -46,6 +46,7 @@ main {
 
 header {
   background-color: #eaeaea;
+  height: 70px;
 }
 
 .left-column .active {
@@ -82,8 +83,14 @@ header {
 footer {
   background-color: #f3eeea;
   color: #b1b1b1;
+  height: 70px;
 }
 
 .notifications-box {
   font-size: 15px;
+}
+
+#chat {
+  height: calc(100% - 140px);
+  overflow-y: auto;
 }
