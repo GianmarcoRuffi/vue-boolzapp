@@ -73,7 +73,7 @@
               :key="index"
               class="list-group-item d-flex justify-content-start align-items-center flex-grow-1"
               :class="{'active': activeContactIndex === index}"
-              @click="activeContactIndex = index"
+              @click="viewChat(index)"
             >
               <img
                 :src="'./img/avatar' + contact.avatar + '.jpg'"

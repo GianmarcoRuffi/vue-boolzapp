@@ -178,28 +178,33 @@ const root = new Vue({
   },
   methods: {
     getAvatarUrl(contact) {},
-  },
-  display() {
-    for (key in this.contacts) {
-      console.log(this.contacts[key]);
-    }
-  },
 
-  sendMessage() {
-    const newMessage = {
-      date: "10/01/2022 15:30:55",
-      message: this.message,
-      status: "sent",
-    };
-    const responseMessage = {
-      date: "10/01/2022 15:30:55",
-      message: "ok  ",
-      status: "received",
-    };
-    this.contacts[this.activeContactIndex].messages.push(newMessage);
-    this.message = "";
-    setTimeout(() => {
-      this.contacts[this.activeContactIndex].messages.push(responseMessage);
-    }, 2000);
+    display() {
+      for (key in this.contacts) {
+        console.log(this.contacts[key]);
+      }
+    },
+
+    viewChat(index) {
+      this.activeContactIndex = index;
+    },
+
+    sendMessage() {
+      const newMessage = {
+        date: "10/01/2022 15:30:55",
+        message: this.message,
+        status: "sent",
+      };
+      const responseMessage = {
+        date: "10/01/2022 15:30:55",
+        message: "ok  ",
+        status: "received",
+      };
+      this.contacts[this.activeContactIndex].messages.push(newMessage);
+      this.message = "";
+      setTimeout(() => {
+        this.contacts[this.activeContactIndex].messages.push(responseMessage);
+      }, 2000);
+    },
   },
 });
