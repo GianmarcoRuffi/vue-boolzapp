@@ -36,20 +36,20 @@
               id="user-buttons"
               class="d-flex justify-content-around align-items-center"
             >
-              <i class="fas fa-circle-notch fa-2x p-1 upperfont fs-5"></i>
-              <i class="fas fa-comment-alt fa-2x p-1 upperfont fs-5"></i>
-              <i class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5"></i>
+              <i class="fas fa-circle-notch fa-2x p-1 upperfont fs-5 px-2"></i>
+              <i class="fas fa-comment-alt fa-2x p-1 upperfont fs-5 px-2"></i>
+              <i class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5 px-2"></i>
             </div>
           </header>
           <div id="notifications" class="d-flex align-items-center py-2">
             <div class="p-2 bell">
               <i class="fas fa-bell-slash fa-3x fs-5"></i>
             </div>
-            <div class="px-3">
-              <h5>Ricevi notifiche di nuovi messaggi</h5>
-              <h5 class="text-decoration-underline notify">
+            <div class="notifications-box px-3">
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <p class="text-decoration-underline notify">
                 Attiva notifiche desktop
-              </h5>
+              </p>
             </div>
           </div>
           <div id="search">
@@ -79,6 +79,8 @@
         <!--Spazio Messaggi Destra-->
 
         <div class="right-column col-8 px-0">
+          <!--Avatar-->
+
           <header class="d-flex p-2">
             <div class="flex-grow-1">
               <img src="./img/avatar_1.jpg" alt="" class="avatar" />
@@ -88,11 +90,14 @@
               id="chat-buttons"
               class="d-flex justify-content-around align-items-center"
             >
-              <i class="fas fa-search fa-2x p-1 upperfont fs-5"></i>
-              <i class="fas fa-paperclip fa-2x p-1 upperfont fs-5"></i>
-              <i class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5"></i>
+              <i class="fas fa-search fa-2x p-1 upperfont fs-5 px-2"></i>
+              <i class="fas fa-paperclip fa-2x p-1 upperfont fs-5 px-2"></i>
+              <i class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5 px-2"></i>
             </div>
           </header>
+
+          <!--Chat-->
+
           <div
             id="chat"
             class="column d-flex justify-content-around flex-wrap py-4"
@@ -105,6 +110,20 @@
             <div class="received p-3 rounded-8 col-4 my-2">sms</div>
             <div class="offset-7 my-2"></div>
           </div>
+
+          <!--Footer-->
+
+          <footer>
+            <div class="d-flex justify-content-between align-items-center py-3">
+              <i class="icons icon-size fa-regular fa-face-smile fs-4 px-4"></i>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Scrivi un messaggio"
+              />
+              <i class="icons icon-size fa-solid fa-microphone fs-4 px-4"></i>
+            </div>
+          </footer>
         </div>
       </div>
     </main>

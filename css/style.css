@@ -78,3 +78,12 @@ header {
 .notify {
   color: #79a1a1;
 }
+
+footer {
+  background-color: #f3eeea;
+  color: #b1b1b1;
+}
+
+.notifications-box {
+  font-size: 15px;
+}
