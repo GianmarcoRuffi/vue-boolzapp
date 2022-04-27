@@ -8,6 +8,7 @@ const root = new Vue({
     //   avatar: "_io",
 
     // },
+
     contacts: [
       {
         name: "Michele",
@@ -182,10 +183,6 @@ const root = new Vue({
     for (key in this.contacts) {
       console.log(this.contacts[key]);
     }
-  },
-
-  viewChat(index) {
-    this.activeContactIndex = index;
   },
 
   sendMessage() {

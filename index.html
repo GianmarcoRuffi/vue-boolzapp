@@ -65,14 +65,15 @@
             </div>
           </div>
 
+          <!-- Contatti -->
+
           <div id="contacts">
             <div
               v-for="(contact, index) in contacts"
               :key="index"
-              class="list-group-item d-flex justify-content-start align-items-center"
+              class="list-group-item d-flex justify-content-start align-items-center flex-grow-1"
               :class="{'active': activeContactIndex === index}"
-              @click="viewChat(index)"
-              class="flex-grow-1 active"
+              @click="activeContactIndex = index"
             >
               <img
                 :src="'./img/avatar' + contact.avatar + '.jpg'"
