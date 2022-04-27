@@ -110,21 +110,15 @@
             id="chat"
             class="column d-flex justify-content-around flex-wrap py-4"
           >
-            <div class="offset-7 my-2"></div>
             <div
-              class="p-3 rounded-8 col-4 my-2"
+              class="p-3 rounded-8 my-2"
               class="messages-text"
               v-for="(item, index) in contacts [activeContactIndex].messages"
               :key="index"
               :class="item.status === 'sent' ? 'sent' : 'received' "
             >
-              sms
+              <span>{{item.message}}</span>
             </div>
-            <div class="offset-7 my-2"></div>
-            <div class="sent p-3 rounded-8 col-4 my-2">sms</div>
-
-            <div class="received p-3 rounded-8 col-4 my-2">sms</div>
-            <div class="offset-7 my-2"></div>
           </div>
 
           <!--Footer-->
