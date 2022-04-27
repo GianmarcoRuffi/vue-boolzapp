@@ -64,12 +64,20 @@
               />
             </div>
           </div>
+
           <div id="contacts">
-            <div v-for="contact in contacts" class="flex-grow-1 active">
+            <div
+              v-for="(contact, index) in contacts"
+              :key="index"
+              class="list-group-item d-flex justify-content-start align-items-center"
+              :class="{'active': activeContactIndex === index}"
+              @click="viewChat(index)"
+              class="flex-grow-1 active"
+            >
               <img
                 :src="'./img/avatar' + contact.avatar + '.jpg'"
                 class="avatar"
-                alt=""
+                alt="'Avatar ' + contact.name"
               />
               <span class="fs-5">{{contact.name}}</span>
             </div>
@@ -103,7 +111,15 @@
             class="column d-flex justify-content-around flex-wrap py-4"
           >
             <div class="offset-7 my-2"></div>
-            <div class="sent p-3 rounded-8 col-4 my-2">sms</div>
+            <div
+              class="p-3 rounded-8 col-4 my-2"
+              class="messages-text"
+              v-for="(item, index) in contacts [activeContactIndex].messages"
+              :key="index"
+              :class="item.status === 'sent' ? 'sent' : 'received' "
+            >
+              sms
+            </div>
             <div class="offset-7 my-2"></div>
             <div class="sent p-3 rounded-8 col-4 my-2">sms</div>
 
@@ -120,6 +136,8 @@
                 type="text"
                 class="form-control"
                 placeholder="Scrivi un messaggio"
+                v-model="message"
+                @keyup.enter="sendMessage()"
               />
               <i class="icons icon-size fa-solid fa-microphone fs-4 px-4"></i>
             </div>

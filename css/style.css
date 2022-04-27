@@ -55,10 +55,12 @@ header {
 
 .sent {
   background-color: #d5f9ba;
+  height: 10%;
 }
 
 .received {
   background-color: #ffffff;
+  height: 10%;
 }
 
 .rounded-5 {
