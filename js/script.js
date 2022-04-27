@@ -12,10 +12,12 @@ const root = new Vue({
     contacts: [
       {
         name: "Michele",
+
         avatar: "_1",
         visible: true,
         messages: [
           {
+            id: 1,
             date: "10/01/2020 15:30:55",
             message: "Hai portato a spasso il cane?",
             status: "sent",
@@ -33,6 +35,7 @@ const root = new Vue({
         ],
       },
       {
+        id: 2,
         name: "Fabio",
         avatar: "_2",
         visible: true,
@@ -55,6 +58,7 @@ const root = new Vue({
         ],
       },
       {
+        id: 3,
         name: "Samuele",
         avatar: "_3",
         visible: true,
@@ -77,6 +81,7 @@ const root = new Vue({
         ],
       },
       {
+        id: 4,
         name: "Alessandro B.",
         avatar: "_4",
         visible: true,
@@ -94,6 +99,7 @@ const root = new Vue({
         ],
       },
       {
+        id: 5,
         name: "Alessandro L.",
         avatar: "_5",
         visible: true,
@@ -111,6 +117,7 @@ const root = new Vue({
         ],
       },
       {
+        id: 6,
         name: "Claudia",
         avatar: "_6",
         visible: true,
@@ -133,6 +140,7 @@ const root = new Vue({
         ],
       },
       {
+        id: 7,
         name: "Federico",
         avatar: "_7",
         visible: true,
@@ -150,6 +158,7 @@ const root = new Vue({
         ],
       },
       {
+        id: 8,
         name: "Davide",
         avatar: "_8",
         visible: true,
@@ -205,6 +214,19 @@ const root = new Vue({
       setTimeout(() => {
         this.contacts[this.activeContactIndex].messages.push(responseMessage);
       }, 1000);
+    },
+  },
+  computed: {
+    filteredContacts() {
+      return this.contacts.filter((contact) => {
+        if (
+          contact.name.toLowerCase().includes(this.searchText.toLowerCase())
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
     },
   },
 });
