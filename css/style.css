@@ -93,7 +93,7 @@ footer {
 }
 
 #chat {
-  height: calc(100% - 140px);
+  height: calc(100% - 116px);
   overflow-y: auto;
 }
 
@@ -103,4 +103,17 @@ footer {
 
 .timestamp {
   font-size: 12px;
+}
+
+.lastmessagesent {
+  color: #79a1a1;
+  font-size: 13px;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #f8f8f8;
 }

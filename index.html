@@ -37,9 +37,15 @@
               id="user-buttons"
               class="d-flex justify-content-around align-items-center"
             >
-              <i class="fas fa-circle-notch fa-2x p-1 upperfont fs-5 px-2"></i>
-              <i class="fas fa-comment-alt fa-2x p-1 upperfont fs-5 px-2"></i>
-              <i class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5 px-2"></i>
+              <i
+                class="fas fa-circle-notch fa-2x p-1 upperfont fs-5 px-2 hand"
+              ></i>
+              <i
+                class="fas fa-comment-alt fa-2x p-1 upperfont fs-5 px-2 hand"
+              ></i>
+              <i
+                class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5 px-2 hand"
+              ></i>
             </div>
           </header>
           <div id="notifications" class="d-flex align-items-center py-2">
@@ -48,7 +54,7 @@
             </div>
             <div class="notifications-box px-3">
               <p>Ricevi notifiche di nuovi messaggi</p>
-              <p class="text-decoration-underline notify">
+              <p class="text-decoration-underline notify hand">
                 Attiva notifiche desktop
               </p>
             </div>
@@ -76,16 +82,28 @@
             <div
               v-for="(contact, index) in filteredContacts"
               :key="index"
-              class="list-group-item d-flex justify-content-start align-items-center flex-grow-1"
+              class="list-group-item d-flex justify-content-start align-items-center flex-grow-1 hand"
               :class="{'active-contact': activeContactId === contact.id}"
               @click="viewChat(contact.id)"
             >
-              <img
-                :src="'./img/avatar' + contact.avatar + '.jpg'"
-                class="avatar"
-                alt="'Avatar ' + contact.name"
-              />
-              <span class="fs-5">{{contact.name}}</span>
+              <div class="col-2 ms-1 my-1 d-flex align-items-center">
+                <img
+                  :src="'./img/avatar' + contact.avatar + '.jpg'"
+                  class="avatar"
+                  alt="'Avatar ' + contact.name"
+                />
+              </div>
+              <div class="ms-1 col-6 flex-grow-1 m-0">
+                <div><span class="fs-5">{{contact.name}}</span></div>
+                <div class="lastmessagesent">
+                  <span class="fs-8">ultimo messaggio inviato</span>
+                </div>
+              </div>
+              <div class="col-3 px-5">
+                <div>
+                  <span class="lastmessagesent">12:00</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -108,9 +126,13 @@
               id="chat-buttons"
               class="d-flex justify-content-around align-items-center"
             >
-              <i class="fas fa-search fa-2x p-1 upperfont fs-5 px-2"></i>
-              <i class="fas fa-paperclip fa-2x p-1 upperfont fs-5 px-2"></i>
-              <i class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5 px-2"></i>
+              <i class="fas fa-search fa-2x p-1 upperfont fs-5 px-2 hand"></i>
+              <i
+                class="fas fa-paperclip fa-2x p-1 upperfont fs-5 px-2 hand"
+              ></i>
+              <i
+                class="fas fa-ellipsis-v fa-2x p-1 upperfont fs-5 px-2 hand"
+              ></i>
             </div>
           </header>
 
@@ -137,7 +159,9 @@
 
           <footer class="align-self-end">
             <div class="d-flex justify-content-between align-items-center py-3">
-              <i class="icons icon-size fa-regular fa-face-smile fs-4 px-4"></i>
+              <i
+                class="icons icon-size fa-regular fa-face-smile fs-4 px-4 hand"
+              ></i>
               <input
                 type="text"
                 class="form-control"
@@ -145,7 +169,9 @@
                 v-model="message"
                 @keyup.enter="sendMessage()"
               />
-              <i class="icons icon-size fa-solid fa-microphone fs-4 px-4"></i>
+              <i
+                class="icons icon-size fa-solid fa-microphone fs-4 px-4 hand"
+              ></i>
             </div>
           </footer>
         </div>
