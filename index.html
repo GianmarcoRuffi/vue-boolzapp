@@ -160,36 +160,55 @@
             <div class="col-12">
               <div
                 class="p-3 rounded-8 my-2"
-                class="row messages-text"
+                class="row messages-text d-flex"
                 v-for="(item, index) in contacts [activeContactIndex].messages"
                 :key="index"
                 :class="item.status === 'sent' ? 'sent' : 'received' "
               >
-                <div class="message">{{item.message}}</div>
-                <!--Dropdown
+                <!-- Dropdown -->
+
                 <div class="dropdown">
                   <button
-                    class="btn message-button dropdown-toggle"
+                    class="btn p-2 border-none d-flex justify-content-center align-items-center"
                     type="button"
-                    id="dropdownMenuButton1"
+                    :id="`dropdown-${index}`"
+                    :key="index"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
-                  ></button>
+                    @click.prevent="setDropdownIndex(index)"
+                  >
+                    <i
+                      :id="`caret-${index}`"
+                      class="fa-solid fa-caret-down"
+                    ></i>
+                  </button>
+
+                  <!-- Dropdown Menu -->
+                  <!-- <div class="dropdown-wrapper"> -->
                   <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
+                    v-show="index == activeDropdown"
+                    class="mydropdown"
+                    aria-labelledby="dropdownMenu2"
                   >
                     <li>
-                      <a
+                      <button
+                        @click.prevent="deleteMsg(index)"
                         class="dropdown-item"
-                        @click="deleteMsg(index)"
-                        href="#"
-                        >Delete message</a
+                        type="button"
                       >
+                        Elimina Messaggio
+                      </button>
                     </li>
                   </ul>
+
+                  <!-- </div> -->
+                  <!-- /fine dropdown Menu  -->
                 </div>
-                /dropdown-->
+
+                <!-- /fine dropdown  -->
+
+                <div class="message">{{item.message}}</div>
+
                 <div class="date fw-light text-muted text-end">
                   <span class="timestamp">{{item.date}}</span>
                 </div>

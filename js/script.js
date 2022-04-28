@@ -206,10 +206,17 @@ const root = new Vue({
     ],
     activeContactIndex: 0,
     activeContactId: 1,
+    activeDropdown: null,
     searchText: "",
     message: "",
   },
   methods: {
+    close(e) {
+      if (e.target.id != `caret-${this.activeDropdown}`) {
+        this.activeDropdown = null;
+      }
+    },
+
     getAvatarUrl(contact) {},
 
     display() {
@@ -261,6 +268,9 @@ const root = new Vue({
     deleteMsg(i) {
       this.contacts[this.activeContactIndex].messages.splice(i, 1);
     },
+    setDropdownIndex(i) {
+      this.activeDropdown = i;
+    },
   },
   computed: {
     filteredContacts() {
@@ -268,5 +278,11 @@ const root = new Vue({
         contact.name.toLowerCase().includes(this.searchText.toLowerCase())
       );
     },
+  },
+  mounted() {
+    document.addEventListener("click", this.close);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.close);
   },
 });
