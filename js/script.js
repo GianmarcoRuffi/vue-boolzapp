@@ -180,6 +180,29 @@ const root = new Vue({
           },
         ],
       },
+      {
+        id: 9,
+        name: "Floppa",
+        avatar: "_9",
+        visible: true,
+        messages: [
+          {
+            date: "12/05/2021 16:30:55",
+            message: "Cosa ne pensi dei Caracal?",
+            status: "received",
+          },
+          {
+            date: "10/01/2020 17:50:00",
+            message: "Hanno delle buffe orecchie con un ciuffo nero!",
+            status: "sent",
+          },
+          {
+            date: "12/05/2021 18:51:00",
+            message: "Proprio così!",
+            status: "received",
+          },
+        ],
+      },
     ],
     activeContactIndex: 0,
     activeContactId: 1,

@@ -135,7 +135,8 @@ footer {
 
 #contacts {
   overflow-y: scroll;
-  height: calc(100% - 214px);
+
+  max-height: calc(100% - 289px);
 }
 
 #notifications {
