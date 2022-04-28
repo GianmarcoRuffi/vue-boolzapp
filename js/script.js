@@ -200,7 +200,7 @@ const root = new Vue({
         return contact.id === id;
       });
       this.activeContactIndex = index;
-      this.activeContactId = contact.id;
+      this.activeContactId = id;
     },
 
     sendMessage() {
