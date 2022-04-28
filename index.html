@@ -122,14 +122,14 @@
           <header class="d-flex p-2">
             <div class="col-1">
               <img
-                :src="'./img/avatar' + contacts[activeContactId].avatar + '.jpg'"
+                :src="'./img/avatar' + contacts[activeContactIndex].avatar + '.jpg'"
                 class="avatar"
                 alt="'Avatar ' + contact.name"
               />
             </div>
             <div class="col-6 me-auto pt-2 ps-4">
               <div class="text">
-                <span class="fs-5">{{contacts[activeContactId].name}}</span>
+                <span class="fs-5">{{contacts[activeContactIndex].name}}</span>
               </div>
               <div class="date fw-light text-muted">
                 Ultimo accesso: {{contacts[activeContactIndex].messages.length >
