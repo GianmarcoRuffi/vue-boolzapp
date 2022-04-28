@@ -11,13 +11,13 @@ const root = new Vue({
 
     contacts: [
       {
+        id: 1,
         name: "Michele",
 
         avatar: "_1",
         visible: true,
         messages: [
           {
-            id: 1,
             date: "10/01/2020 15:30:55",
             message: "Hai portato a spasso il cane?",
             status: "sent",
@@ -182,6 +182,7 @@ const root = new Vue({
       },
     ],
     activeContactIndex: 0,
+    activeContactId: 1,
     searchText: "",
     message: "",
   },
@@ -199,6 +200,7 @@ const root = new Vue({
         return contact.id === id;
       });
       this.activeContactIndex = index;
+      this.activeContactId = contact.id;
     },
 
     sendMessage() {

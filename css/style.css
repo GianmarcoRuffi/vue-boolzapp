@@ -96,3 +96,11 @@ footer {
   height: calc(100% - 140px);
   overflow-y: auto;
 }
+
+.list-group-item.active-contact {
+  background-color: #e9ebeb;
+}
+
+.timestamp {
+  font-size: 12px;
+}
