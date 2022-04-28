@@ -103,7 +103,7 @@ footer {
 }
 
 #chat {
-  height: calc(100% - 93px);
+  height: calc(100% - 140px);
   overflow-y: scroll;
 }
 
@@ -130,6 +130,7 @@ footer {
 
 #contacts {
   overflow-y: scroll;
+  height: 576px;
 }
 
 /* .message {
