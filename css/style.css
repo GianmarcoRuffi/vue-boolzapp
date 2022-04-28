@@ -94,7 +94,7 @@ footer {
 
 #chat {
   height: calc(100% - 116px);
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .list-group-item.active-contact {
@@ -116,4 +116,8 @@ footer {
 
 .list-group-item:hover {
   background-color: #f8f8f8;
+}
+
+#contacts {
+  overflow-y: scroll;
 }
