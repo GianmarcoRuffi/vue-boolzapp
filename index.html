@@ -127,11 +127,13 @@
                 alt="'Avatar ' + contact.name"
               />
             </div>
-            <div class="col-6 me-auto pt-2 ps-4">
+            <div
+              class="row me-auto d-flex justify-content-start align-items-center"
+            >
               <div class="text">
                 <span class="fs-5">{{contacts[activeContactIndex].name}}</span>
               </div>
-              <div class="date fw-light text-muted">
+              <div class="date fw-light text-muted fs-10">
                 Ultimo accesso: {{contacts[activeContactIndex].messages.length >
                 0 ? contacts[activeContactIndex].messages.slice(-1)[0].date :
                 ''}}

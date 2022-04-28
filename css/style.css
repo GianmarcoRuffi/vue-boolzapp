@@ -146,6 +146,10 @@ footer {
   height: 55px;
 }
 
+.fs-10 {
+  font-size: 14px;
+}
+
 /* .message {
   position: relative;
 }
