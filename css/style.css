@@ -130,7 +130,15 @@ footer {
 
 #contacts {
   overflow-y: scroll;
-  height: 576px;
+  height: calc(100% - 205px);
+}
+
+#notifications {
+  height: 75px;
+}
+
+#search {
+  height: 50px;
 }
 
 /* .message {
