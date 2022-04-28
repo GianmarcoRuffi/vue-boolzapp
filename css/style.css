@@ -55,18 +55,22 @@ header {
 
 .sent {
   background-color: #d5f9ba;
-  height: 10%;
-  width: 40%;
+  min-height: 5%;
+  max-width: 42%;
+  min-width: 35%;
   float: right;
   clear: both;
+  margin-right: 5%;
 }
 
 .received {
   background-color: #ffffff;
-  height: 10%;
-  width: 40%;
+  min-height: 5%;
+  max-width: 42%;
+  min-width: 35%;
   float: left;
   clear: both;
+  margin-left: 5%;
 }
 
 .rounded-5 {
