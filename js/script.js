@@ -220,6 +220,9 @@ const root = new Vue({
         this.contacts[this.activeContactIndex].messages.push(responseMessage);
       }, 1000);
     },
+    deleteMsg(i) {
+      this.contacts[this.activeContactIndex].messages.splice(i, 1);
+    },
   },
   computed: {
     filteredContacts() {

@@ -96,12 +96,18 @@
               <div class="ms-1 col-6 flex-grow-1 m-0">
                 <div><span class="fs-5">{{contact.name}}</span></div>
                 <div class="lastmessagesent">
-                  <span class="fs-8">ultimo messaggio inviato</span>
+                  <span class="fs-8"
+                    >{{contact.messages.length > 0 ?
+                    contact.messages.slice(-1)[0].message : ''}}</span
+                  >
                 </div>
               </div>
-              <div class="col-3 px-5">
+              <div class="col-3 px-4">
                 <div>
-                  <span class="lastmessagesent">12:00</span>
+                  <span class="lastmessagesent"
+                    >{{contact.messages.length > 0 ?
+                    contact.messages.slice(-1)[0].date : ''}}</span
+                  >
                 </div>
               </div>
             </div>
@@ -125,7 +131,11 @@
               <div class="text">
                 <span class="fs-5">{{contacts[activeContactId].name}}</span>
               </div>
-              <div class="date fw-light text-muted">Ultimo accesso: 12:00</div>
+              <div class="date fw-light text-muted">
+                Ultimo accesso: {{contacts[activeContactIndex].messages.length >
+                0 ? contacts[activeContactIndex].messages.slice(-1)[0].date :
+                ''}}
+              </div>
             </div>
 
             <div
@@ -153,7 +163,31 @@
                 :key="index"
                 :class="item.status === 'sent' ? 'sent' : 'received' "
               >
-                <span>{{item.message}}</span>
+                <div class="message">{{item.message}}</div>
+                <!--Dropdown
+                <div class="dropdown">
+                  <button
+                    class="btn message-button dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        @click="deleteMsg(index)"
+                        href="#"
+                        >Delete message</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                /dropdown-->
                 <div class="date fw-light text-muted text-end">
                   <span class="timestamp">{{item.date}}</span>
                 </div>
