@@ -204,18 +204,33 @@ const root = new Vue({
     },
 
     sendMessage() {
+      const quotes = [
+        "Si, ma non ne sono sicuro.",
+        "Ma si può sapere chi sei e perchè mi stai scrivendo?",
+        "Git gud.",
+        "Peccato!",
+        "Ora, ora si può fare!",
+        "Ecco lo sapevo!",
+        "E' tutto un casino!",
+        "Te lo stavano dicendo.",
+        "Ahahahahahah!!!",
+        "Certamente.",
+        "Tra circa un'oretta.",
+      ];
       const newMessage = {
         date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         message: this.message,
         status: "sent",
       };
+
       const responseMessage = {
         date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-        message: "Ok!",
+        message: quotes[Math.floor(Math.random() * quotes.length)],
         status: "received",
       };
       this.contacts[this.activeContactIndex].messages.push(newMessage);
       this.message = "";
+
       setTimeout(() => {
         this.contacts[this.activeContactIndex].messages.push(responseMessage);
       }, 1000);
