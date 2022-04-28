@@ -114,14 +114,20 @@
           <!--Avatar-->
 
           <header class="d-flex p-2">
-            <div class="flex-grow-1">
+            <div class="col-1">
               <img
                 :src="'./img/avatar' + contacts[activeContactId].avatar + '.jpg'"
                 class="avatar"
                 alt="'Avatar ' + contact.name"
               />
-              <span class="fs-5">{{contacts[activeContactId].name}}</span>
             </div>
+            <div class="col-6 me-auto pt-2 ps-4">
+              <div class="text">
+                <span class="fs-5">{{contacts[activeContactId].name}}</span>
+              </div>
+              <div class="date fw-light text-muted">Ultimo accesso: 12:00</div>
+            </div>
+
             <div
               id="chat-buttons"
               class="d-flex justify-content-around align-items-center"
