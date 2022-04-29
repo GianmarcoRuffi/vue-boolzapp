@@ -207,7 +207,8 @@ footer {
   background-color: #2a2f32;
 }
 
-header.dark-mode {
+header.dark-mode,
+footer.dark-mode {
   background-color: #2a2f32;
 }
 
