@@ -152,7 +152,6 @@ footer {
 }
 
 .dropdown-menu {
-  /* display: block !important; */
   right: -10px;
   top: -15px;
 }
@@ -175,6 +174,10 @@ footer {
   top: -15px;
 }
 
+.fa-lightbulb:hover {
+  color: red;
+}
+
 .messages-text {
   position: relative;
 }
@@ -192,4 +195,27 @@ footer {
 .btn:hover {
   cursor: pointer;
   opacity: 1;
+}
+
+.dark-mode {
+  background-color: rgb(5, 9, 219);
+  color: white;
+}
+
+.dark-mode.list-group-item {
+  color: red;
+  background-color: rgb(5, 9, 219);
+}
+
+body.dark-mode {
+  color: red;
+  background: linear-gradient(#200096 15%, #dbdbd3 15% 80%);
+}
+
+.main-window.dark-mode {
+  background-color: rgb(15, 30, 236);
+}
+
+header.dark-mode {
+  background-color: rgb(15, 30, 236);
 }

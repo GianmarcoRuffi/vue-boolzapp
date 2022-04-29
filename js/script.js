@@ -207,10 +207,15 @@ const root = new Vue({
     activeContactIndex: 0,
     activeContactId: 1,
     activeDropdown: null,
+    darkMode: false,
     searchText: "",
     message: "",
   },
   methods: {
+    changeTheme() {
+      this.darkMode = !this.darkMode;
+    },
+
     close(e) {
       if (e.target.id != `caret-${this.activeDropdown}`) {
         this.activeDropdown = null;
@@ -233,7 +238,7 @@ const root = new Vue({
       this.activeContactId = id;
     },
 
-    sendMessage() {
+    sendMessage(i) {
       const quotes = [
         "Si, ma non ne sono sicuro.",
         "Ma si può sapere chi sei e perchè mi stai scrivendo?",
@@ -247,6 +252,7 @@ const root = new Vue({
         "Certamente.",
         "Tra circa un'oretta.",
       ];
+
       const newMessage = {
         date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         message: this.message,
@@ -262,7 +268,7 @@ const root = new Vue({
       this.message = "";
 
       setTimeout(() => {
-        this.contacts[this.activeContactIndex].messages.push(responseMessage);
+        this.contacts[i].messages.push(responseMessage);
       }, 1000);
     },
     deleteMsg(i) {

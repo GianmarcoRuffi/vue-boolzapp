@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <title>Boolzapp</title>
   </head>
-  <body>
+  <body :class="[{'dark-mode':darkMode}]">
     <main
       id="root"
       class="container d-flex justify-content-center align-items-center"
@@ -28,7 +28,7 @@
         <!--Spazio contatti Sinistra-->
 
         <div class="left-column col-4 px-0">
-          <header class="d-flex p-2">
+          <header :class="['d-flex', 'p-2', {'dark-mode':darkMode}]">
             <div id="user" class="flex-grow-1">
               <img src="./img/avatar_io.jpg" alt="" class="avatar" />
               <span class="fs-5">Sofia</span>
@@ -37,6 +37,10 @@
               id="user-buttons"
               class="d-flex justify-content-around align-items-center"
             >
+              <i
+                class="fa-solid fa-lightbulb p-1 upperfont fs-5 px-2 hand"
+                @click="changeTheme()"
+              ></i>
               <i
                 class="fas fa-circle-notch fa-2x p-1 upperfont fs-5 px-2 hand"
               ></i>
@@ -82,7 +86,7 @@
             <div
               v-for="(contact, index) in filteredContacts"
               :key="index"
-              class="list-group-item d-flex justify-content-start align-items-center flex-grow-1 hand"
+              :class="['list-group-item', 'd-flex', 'justify-content-start', 'align-items-center', 'flex-grow-1', 'hand', {'dark-mode':darkMode}]"
               :class="{'active-contact': activeContactId === contact.id}"
               @click="viewChat(contact.id)"
             >
@@ -119,7 +123,7 @@
         <div class="right-column col-8 h-100 px-0">
           <!--Avatar-->
 
-          <header class="d-flex p-2">
+          <header :class="['d-flex', 'p-2', {'dark-mode':darkMode}]">
             <div class="col-1">
               <img
                 :src="'./img/avatar' + contacts[activeContactIndex].avatar + '.jpg'"
@@ -228,7 +232,7 @@
                 class="form-control"
                 placeholder="Scrivi un messaggio"
                 v-model="message"
-                @keyup.enter="sendMessage()"
+                @keyup.enter="sendMessage(activeContactIndex)"
               />
               <i
                 class="icons icon-size fa-solid fa-microphone fs-4 px-4 hand"
