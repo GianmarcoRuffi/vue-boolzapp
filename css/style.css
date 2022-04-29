@@ -203,8 +203,12 @@ footer {
 }
 
 .dark-mode.list-group-item {
-  color: red;
-  background-color: rgb(5, 9, 219);
+  color: white;
+  background-color: #2a2f32;
+}
+
+header.dark-mode {
+  background-color: #2a2f32;
 }
 
 body.dark-mode {
@@ -216,6 +220,11 @@ body.dark-mode {
   background-color: rgb(15, 30, 236);
 }
 
-header.dark-mode {
-  background-color: rgb(15, 30, 236);
+#notifications.dark-mode {
+  background-color: #085373;
+}
+
+.notify.dark-mode {
+  color: white;
+  background-color: #085373;
 }

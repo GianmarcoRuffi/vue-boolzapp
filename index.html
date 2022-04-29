@@ -52,13 +52,18 @@
               ></i>
             </div>
           </header>
-          <div id="notifications" class="d-flex align-items-center p-2">
+          <div
+            id="notifications"
+            :class="['d-flex', 'align-items-center', 'p-2', {'dark-mode':darkMode} ]"
+          >
             <div class="bell px-2">
               <i class="fas fa-bell-slash fa-3x fs-5"></i>
             </div>
             <div class="notifications-box px-3 row">
               <span>Ricevi notifiche di nuovi messaggi</span>
-              <span class="text-decoration-underline notify hand">
+              <span
+                :class="['text-decoration-underline', 'notify', 'hand',{'dark-mode':darkMode}]"
+              >
                 Attiva notifiche desktop
               </span>
             </div>
